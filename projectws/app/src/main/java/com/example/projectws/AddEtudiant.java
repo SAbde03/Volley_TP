@@ -41,7 +41,7 @@ public class AddEtudiant extends AppCompatActivity implements View.OnClickListen
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_etudiant);
 
-        // Init views
+      
         nom = findViewById(R.id.nom);
         prenom = findViewById(R.id.prenom);
         ville = findViewById(R.id.ville);
@@ -49,7 +49,7 @@ public class AddEtudiant extends AppCompatActivity implements View.OnClickListen
         m = findViewById(R.id.m);
         f = findViewById(R.id.f);
 
-        // Set listener
+       
         add.setOnClickListener(this);
 
         Button showAll = findViewById(R.id.list);
@@ -75,15 +75,14 @@ public class AddEtudiant extends AppCompatActivity implements View.OnClickListen
                         @Override
                         public void onResponse(String response) {
                             Log.d("AddEtudiant", "Response: " + response);
-                            // You can add a Toast or redirect here
+                    
                         }
                     },
                     new Response.ErrorListener() {
                         @Override
                         public void onErrorResponse(VolleyError error) {
                             Log.e("AddEtudiant", "Error: " + error.getMessage());
-                            // Optionally show a Toast here
-                        }
+                              }
                     }) {
                 @Override
                 protected Map<String, String> getParams() throws AuthFailureError {
